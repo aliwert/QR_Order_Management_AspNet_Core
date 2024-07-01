@@ -1,6 +1,53 @@
+using SignalR.BusinessLayer.Abstract;
+using SignalR.BusinessLayer.Concrete;
+using SignalR.DataAccessLayer.Abstract;
+using SignalR.DataAccessLayer.Concrete;
+using SignalR.DataAccessLayer.EntityFramework;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<SignalRContext>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly()); // reg. configuration for automapper
+
+//about builder
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
+// booking builder
+builder.Services.AddScoped<IBookingService, BookingManager>();
+builder.Services.AddScoped<IBookingDal, EfBookingDal>();
+
+// category builder
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+
+// contact builder
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+
+// discount builder
+
+builder.Services.AddScoped<IDiscountService, DiscountManager>();
+builder.Services.AddScoped<IDiscountDal, EfDiscountDal>();
+
+
+// feature builder
+builder.Services.AddScoped<IFeatureService, FeatureManager>();
+builder.Services.AddScoped<IFeatureDal, EfFeatureDal>();
+
+// social media builder
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+
+// testimonial builder
+builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+
+// product builder
+builder.Services.AddScoped<IProductService, ProductManager>();
+builder.Services.AddScoped<IProductDal, EfProductDal>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
