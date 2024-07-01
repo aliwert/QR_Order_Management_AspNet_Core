@@ -9,13 +9,6 @@ namespace SignalR.DataAccessLayer.Concrete
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-LRMEISB\\SQLEXPRESS;initial Catalog=SignalRDb;integrated Security=true");
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Testimonial>()
-                .HasKey(t => t.TestimonalID);
-        }
-
         public DbSet<About> Abouts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Category> Categories { get; set; }
