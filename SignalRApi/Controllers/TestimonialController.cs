@@ -64,7 +64,7 @@ namespace SignalRApi.Controllers
                 ImageUrl=updateTestimonialDto.ImageUrl,
                 TestimonalID = updateTestimonialDto.TestimonalID,
             });
-            return Ok("Product information updated");
+            return Ok("Testimonial information updated");
         }
     }
 }
