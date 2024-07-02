@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SignalR.BusinessLayer.Abstract;
+using SignalR.DataAccessLayer.Concrete;
 using SignalR.DtoLayer.ProductDto;
 using SignalR.EntityLayer.Entities;
 
@@ -28,20 +30,32 @@ namespace SignalRApi.Controllers
         [HttpGet("ProductListWithCategory")]
         public IActionResult ProductListWithCategory()
         {
-            var value = _mapper.Map<List<ResulProductWithCategory>>(_productService.TGetProductsWithCategories());
-            return Ok(value);
-            
+            var context = new SignalRContext();
+            var values = context.Products.Include(x => x.Category).Select(y => new ResultProductWithCategory
+            {
+                Description = y.Description,
+                ImageUrl = y.ImageUrl,
+                Price = y.Price,
+                ProductID = y.ProductID,
+                ProductStatus = y.ProductStatus,
+                Name = y.Category.Name,
+                ProductName = y.Category.Name,
+
+
+            });
+            return Ok(values.ToList());
+
         }
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {
             _productService.TAdd(new Product()
             {
-              Description = createProductDto.Description,
-              ImageUrl = createProductDto.ImageUrl,
-              Price = createProductDto.Price,
-              ProductName = createProductDto.ProductName,
-              ProductStatus = createProductDto.ProductStatus,
+                Description = createProductDto.Description,
+                ImageUrl = createProductDto.ImageUrl,
+                Price = createProductDto.Price,
+                ProductName = createProductDto.ProductName,
+                ProductStatus = createProductDto.ProductStatus,
             });
             return Ok("Product added");
         }
