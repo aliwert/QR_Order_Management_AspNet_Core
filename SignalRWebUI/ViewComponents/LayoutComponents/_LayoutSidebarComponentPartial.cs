@@ -4,6 +4,9 @@ namespace SignalRWebUI.ViewComponents.LayoutComponents
 {
 	public class _LayoutSidebarComponentPartial : ViewComponent
 	{
-		public IViewComponentResult Invoke() { return View(); }
+		public IViewComponentResult Invoke()
+		{
+			return View();
+		}
 	}
 }
