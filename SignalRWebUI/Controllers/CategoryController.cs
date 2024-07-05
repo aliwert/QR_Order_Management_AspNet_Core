@@ -47,7 +47,7 @@ namespace SignalRWebUI.Controllers
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"https://localhost:7063/api/Category{id}");
+            var responseMessage = await client.DeleteAsync($"https://localhost:7063/api/Category/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
