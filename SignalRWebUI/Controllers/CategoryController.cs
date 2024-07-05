@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using SignalRWebUI.Dtos.CategoryDtos;
 
 namespace SignalRWebUI.Controllers
 {
@@ -17,7 +19,8 @@ public CategoryController(IHttpClientFactory httpClientFactory)
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync(); // string method 
-                var values = 
+                var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>> (jsonData); //list = deserialize,  add & update = serialize
+                return View(values);
             }
             return View();
         }
