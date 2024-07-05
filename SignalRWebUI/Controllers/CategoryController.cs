@@ -24,5 +24,9 @@ public CategoryController(IHttpClientFactory httpClientFactory)
             }
             return View();
         }
+        public IActionResult CreateCategory()
+        {
+            return View();
+        }
     }
 }
