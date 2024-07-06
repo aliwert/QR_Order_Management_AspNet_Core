@@ -42,7 +42,7 @@ namespace SignalRApi.Controllers
             _categoryService.TDelete(value);
             return Ok("Category deleted");
         }
-        [HttpGet("GetCategory")]
+        [HttpGet("{id}")]
         public IActionResult GetCategory(int id)
         {
             var value = _categoryService.TGetByID(id);
