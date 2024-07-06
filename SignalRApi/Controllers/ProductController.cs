@@ -84,6 +84,7 @@ namespace SignalRApi.Controllers
                 ProductName = updateProductDto.ProductName,
                 ProductStatus = updateProductDto.ProductStatus,
                 ProductID = updateProductDto.ProductID,
+                CategoryID= updateProductDto.CategoryID,
 
             });
             return Ok("Product information updated");
