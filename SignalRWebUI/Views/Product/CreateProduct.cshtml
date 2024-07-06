@@ -18,33 +18,25 @@
                                 <label for="productname">Enter Product Name</label>
                                 <input type="text" class="form-control" asp-for="ProductName" id="productname" placeholder="Enter Product Name">
                             </div>
-                        </div>
-                        <div class="card-body">
                             <div class="form-group">
                                 <label for="price">Enter Product Price</label>
                                 <input type="text" class="form-control" asp-for="Price" id="price" placeholder="Enter Product Price">
                             </div>
-                        </div>
-                        <div class="card-body">
                             <div class="form-group">
-                                <label for="imageurl">Enter Product Image</label>
-                                <input type="text" class="form-control" asp-for="ImageUrl" id="imageurl" placeholder="Enter Product URL">
+                                <label for="imageurl">Enter Product Image URL</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" id="imageurl" placeholder="Enter Product Image URL">
                             </div>
-                        </div>
-                        <div class="card-body">
                             <div class="form-group">
-                                <label for="price">Choose Product Category</label>
-                                <input type="text" class="form-control" asp-for="Price" id="price" placeholder="Enter Product Price">
+                                <label for="category">Choose Product Category</label>
+                                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control", id = "category" })
                             </div>
-                        </div>
-                        <div class="card-body">
                             <div class="form-group">
                                 <label for="description">Enter Product Description</label>
-                                <input type="text" class="form-control" asp-for="Description" id="description" placeholder="Enter Product Price">
+                                <textarea class="form-control" asp-for="Description" id="description" placeholder="Enter Product Description"></textarea>
                             </div>
                         </div>
                         <div class="card-action">
-                            <button class="btn btn-primary">Add Category</button>
+                            <button type="submit" class="btn btn-primary">Add Product</button>
                         </div>
                     </div>
                 </form>
@@ -52,6 +44,3 @@
         </div>
     </div>
 </div>
-
-
-
