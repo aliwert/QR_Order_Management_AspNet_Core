@@ -1,4 +1,4 @@
-﻿@model List<ResultProductDto> // viewimports file 
+﻿@model List<ResultProductDto> // viewimports file
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -40,8 +40,8 @@
                                         <td>@x.Name</td>
                                         <td>@x.ProductStatus</td>
 
-                                        <td><a href="/Product/DeleteProduct/@x.ProductID" class="btn btn-outline-danger">Delete</a></td>
-                                        <td><a href="/Product/UpdateProduct/@x.ProductID" class="btn btn-outline-success">Update</a></td>
+                                        <td><a href="/Product/DeleteProduct/@x.ProductID" class="btn btn-danger btn-border btn-round">Delete</a></td>
+                                        <td><a href="/Product/UpdateProduct/@x.ProductID" class="btn btn-success btn-border btn-round">Update</a></td>
 
                                     </tr>
                                 }
