@@ -1,0 +1,57 @@
+﻿@model SignalRWebUI.Dtos.ProductDtos.CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Product Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add New Product</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="productname">Enter Product Name</label>
+                                <input type="text" class="form-control" asp-for="ProductName" id="productname" placeholder="Enter Product Name">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="price">Enter Product Price</label>
+                                <input type="text" class="form-control" asp-for="Price" id="price" placeholder="Enter Product Price">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="imageurl">Enter Product Image</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" id="imageurl" placeholder="Enter Product URL">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="price">Choose Product Category</label>
+                                <input type="text" class="form-control" asp-for="Price" id="price" placeholder="Enter Product Price">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="description">Enter Product Description</label>
+                                <input type="text" class="form-control" asp-for="Description" id="description" placeholder="Enter Product Price">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Add Category</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

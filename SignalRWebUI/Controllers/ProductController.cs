@@ -32,7 +32,7 @@ namespace SignalRWebUI.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateProdcut(CreateProductDto createProductDto)
+        public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
         {
             createProductDto.ProductStatus = true;
             var client = _httpClientFactory.CreateClient();
