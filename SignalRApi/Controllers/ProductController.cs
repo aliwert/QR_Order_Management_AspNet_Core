@@ -39,7 +39,7 @@ namespace SignalRApi.Controllers
                 ProductID = y.ProductID,
                 ProductStatus = y.ProductStatus,
                 Name = y.Category.Name,
-                ProductName = y.Category.Name,
+                ProductName = y.ProductName,
 
 
             });
@@ -56,6 +56,7 @@ namespace SignalRApi.Controllers
                 Price = createProductDto.Price,
                 ProductName = createProductDto.ProductName,
                 ProductStatus = createProductDto.ProductStatus,
+                CategoryID = createProductDto.CategoryID,
             });
             return Ok("Product added");
         }
