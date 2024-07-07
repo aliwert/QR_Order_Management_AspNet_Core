@@ -1,0 +1,53 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Main Page About Us Operations</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">About Us List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can perform operations related to the about us from below, you don't forget create an about us page
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <td>@x.Title</td>
+                                        <td>@x.Description</td>
+                                        <td><a href="/About/DeleteAbout/@x.AboutID" class="btn btn-outline-danger">Delete</a></td>
+                                        <td><a href="/About/UpdateAbout/@x.AboutID" class="btn btn-outline-success">Update</a></td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/About/CreateAbout/" class="btn btn-outline-primary">Add New About Us </a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
