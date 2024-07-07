@@ -1,0 +1,57 @@
+﻿@model CreateBookingDto
+@{
+    ViewData["Title"] = "CreateBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Booking Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add New Booking</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Name">Name Surname</label>
+                                <input type="text" class="form-control" asp-for="Name" id="Name" placeholder="Enter your Name & Surname">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Phone">Phone Number</label>
+                                <input type="text" class="form-control" asp-for="Phone" id="Phone" placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Mail">Mail Adress</label>
+                                <input type="email" class="form-control" asp-for="Mail" id="Mail" placeholder="Enter Mail Adress">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="PersonCount">Body Count</label>
+                                <input type="text" class="form-control" asp-for="PersonCount" id="PersonCount" placeholder="Enter Body Count ">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Date">Booking Date</label>
+                                <input type="date" class="form-control" asp-for="Date" id="Date" placeholder="Enter Body Count ">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Add Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
