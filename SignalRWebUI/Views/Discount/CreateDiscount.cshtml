@@ -1,8 +1,52 @@
-﻿
+﻿@model CreateDiscountDto
 @{
     ViewData["Title"] = "CreateDiscount";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>CreateDiscount</h1>
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Discount Product Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add New Discount Product</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Title">Enter Product Name</label>
+                                <input type="text" class="form-control" asp-for="Title" id="Title" placeholder="Title Name">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Amount">Enter Rate Of Discount</label>
+                                <input type="text" class="form-control" asp-for="Amount" id="Amount" placeholder="Rate Of Discount">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="ImageUrl">Enter Product Image</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" id="ImageUrl" placeholder="Product Image">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Description">Enter Product Description</label>
+                                <input type="text" class="form-control" asp-for="Description" id="Description" placeholder="Product Description">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Add Category</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
