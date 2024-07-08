@@ -1,8 +1,56 @@
-﻿
+﻿@model List<ResultDiscountDto>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/AdminLayout/Index.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>Index</h1>
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Discount Of The Day Transactions</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Discount List</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							The discounts of the day are available below. Don't forget to add a maximum of 2 items.
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Product</th>
+									<th scope="col">Rate Of Discount</th>
+									<th scope="col">Discount Status</th>
+									<th scope="col">Delete</th>
+									<th scope="col">Update</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var x in Model)
+								{
+									<tr>
+										<td>@x.CategoryID</td>
+										<td>@x.Name</td>
+										<td>@x.Status</td>
+										<td><a href="/Category/DeleteCategory/@x.CategoryID" class="btn btn-outline-danger">Delete</a></td>
+										<td><a href="/Category/UpdateCategory/@x.CategoryID" class="btn btn-outline-success">Update</a></td>
 
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Category/CreateCategory/" class="btn btn-outline-primary">Add New Category</a>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
