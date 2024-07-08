@@ -32,17 +32,18 @@
 								@foreach (var x in Model)
 								{
 									<tr>
-										<td>@x.CategoryID</td>
-										<td>@x.Name</td>
-										<td>@x.Status</td>
-										<td><a href="/Category/DeleteCategory/@x.CategoryID" class="btn btn-outline-danger">Delete</a></td>
-										<td><a href="/Category/UpdateCategory/@x.CategoryID" class="btn btn-outline-success">Update</a></td>
+										<td>@x.DiscountID</td>
+										<td>@x.Title</td>
+										<td>@x.Amount</td>
+										<td><a href="/Discount/DeleteDiscount/@x.DiscountID" class="btn btn-outline-warning">Status</a></td>
+										<td><a href="/Discount/DeleteDiscount/@x.DiscountID" class="btn btn-outline-danger">Delete</a></td>
+										<td><a href="/Discount/UpdateDiscount/@x.DiscountID" class="btn btn-outline-success">Update</a></td>
 
 									</tr>
 								}
 							</tbody>
 						</table>
-						<a href="/Category/CreateCategory/" class="btn btn-outline-primary">Add New Category</a>
+						<a href="/Discount/CreateDiscount/" class="btn btn-outline-primary">Add New Discount</a>
 					</div>
 				</div>
 
