@@ -1,0 +1,63 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Featured Transactions</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Featured List</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							You can perform the operations related to the featured items on the main page from below.
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Title 1</th>
+									<th scope="col">Title 2</th>
+									<th scope="col">Title 3</th>
+									<th scope="col">Description 1</th>
+									<th scope="col">Description 2</th>
+									<th scope="col">Description 3</th>
+									<th scope="col">Delete</th>
+									<th scope="col">Update</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var x in Model)
+								{
+									<tr>
+										<td>@x.FeatureID</td>
+										<td>@x.Title1</td>
+										<td>@x.Title2</td>
+										<td>@x.Title3</td>
+										<td>@x.Description1</td>
+										<td>@x.Description2</td>
+										<td>@x.Description3</td>
+										<td><a href="/Feature/DeleteFeature/@x.FeatureID" class="btn btn-outline-danger">Delete</a></td>
+										<td><a href="/Feature/UpdateFeature/@x.FeatureID" class="btn btn-outline-success">Update</a></td>
+
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Discount/CreateDiscount/" class="btn btn-outline-primary">Add New Feature</a>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
