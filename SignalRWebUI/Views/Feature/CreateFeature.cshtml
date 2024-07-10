@@ -1,8 +1,62 @@
-﻿
+﻿@model CreateFeatureDto
 @{
     ViewData["Title"] = "CreateFeature";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>CreateFeature</h1>
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Featured Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add New Featured</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Title1">Enter First Title</label>
+                                <input type="text" class="form-control" asp-for="Title1" id="Title1" placeholder="First Title">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Title2">Enter Second Title</label>
+                                <input type="text" class="form-control" asp-for="Title2" id="Title2" placeholder="Second Title">
+                            </div>
+                        </div><div class="card-body">
+                            <div class="form-group">
+                                <label for="Title3">Enter Third Title</label>
+                                <input type="text" class="form-control" asp-for="Title3" id="Title3" placeholder="Third Title">
+                            </div>
+                        </div><div class="card-body">
+                            <div class="form-group">
+                                <label for="Description1">Enter First Description</label>
+                                <input type="text" class="form-control" asp-for="Description1" id="Description1" placeholder="First Description">
+                            </div>
+                        </div><div class="card-body">
+                            <div class="form-group">
+                                <label for="Description2">Enter Second Description</label>
+                                <input type="text" class="form-control" asp-for="Description2" id="Description2" placeholder="Second Description">
+                            </div>
+                        </div><div class="card-body">
+                            <div class="form-group">
+                                <label for="Description3">Enter Third Description</label>
+                                <input type="text" class="form-control" asp-for="Description3" id="Description3" placeholder="Third Description">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Add Featured</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
