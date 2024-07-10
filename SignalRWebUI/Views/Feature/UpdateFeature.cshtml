@@ -1,13 +1,8 @@
-﻿
+﻿@model UpdateFeatureDto
 @{
     ViewData["Title"] = "UpdateFeature";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-
-
-
-
-
 <div class="content">
     <div class="container-fluid">
         <h4 class="page-title">Featured Transactions</h4>
@@ -16,8 +11,9 @@
                 <form method="post">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Add New Featured</div>
+                            <div class="card-title">Update Featured</div>
                         </div>
+                        <input type="hidden" asp-for="FeatureID"  />
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="Title1">Enter First Title</label>
@@ -51,7 +47,7 @@
                             </div>
                         </div>
                         <div class="card-action">
-                            <button class="btn btn-primary">Add Featured</button>
+                            <button class="btn btn-primary">Update Featured</button>
                         </div>
                     </div>
                 </form>
