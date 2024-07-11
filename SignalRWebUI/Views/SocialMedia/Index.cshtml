@@ -1,8 +1,52 @@
-﻿
+﻿@model List<SignalRWebUI.Dtos.SocialMediaDtos.ResultSocialMediaDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>Index</h1>
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Social Media Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Social Media List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can perform transactions related to the Social Media from below
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Link</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                <tr>
+                                <td>@x.SocialMediaID</td>
 
+
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/SocialMedia/CreateSocialMedia/" class="btn btn-outline-primary">Add New Social Media</a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

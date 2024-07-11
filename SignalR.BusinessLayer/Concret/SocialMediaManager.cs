@@ -12,6 +12,12 @@ namespace SignalR.BusinessLayer.Concrete
     public class SocialMediaManager : ISocialMediaService
     {
         private readonly ISocialMediaDal _socialMediaDal;
+
+        public SocialMediaManager(ISocialMediaDal socialMediaDal)
+        {
+            _socialMediaDal = socialMediaDal;
+        }
+
         public void TAdd(SocialMedia entity)
         {
             _socialMediaDal.Add(entity);
@@ -25,6 +31,11 @@ namespace SignalR.BusinessLayer.Concrete
         public SocialMedia TGetByID(int id)
         {
             return _socialMediaDal.GetByID(id);
+        }
+
+        public List<SocialMedia> TGetListAll()
+        {
+            return _socialMediaDal.GetListtAll();
         }
 
         public List<SocialMedia> TGetListtAll()

@@ -23,7 +23,7 @@ namespace SignalRApi.Controllers
         [HttpGet]
         public IActionResult SocialMediaList()
         {
-            var value = _mapper.Map<List<ResultSocialMedia>>(_socialMediaService.TGetListtAll());
+            var value = _mapper.Map<List<ResultSocialMediaDto>>(_socialMediaService.TGetListtAll());
             return Ok(value);
         }
         [HttpPost]

@@ -20,7 +20,7 @@ namespace SignalRWebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync(); // string method 
-                var values = JsonConvert.DeserializeObject<List<ResultSocialMedia>>(jsonData); //list = deserialize,  add & update = serialize
+                var values = JsonConvert.DeserializeObject<List<ResultSocialMediaDto>>(jsonData); //list = deserialize,  add & update = serialize
                 return View(values);
             }
             return View();

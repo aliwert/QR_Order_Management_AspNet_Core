@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SignalRWebUI.Dtos.SocialMediaDtos
 {
-    public class ResultSocialMedia
+    public class ResultSocialMediaDto
     {
         public int SocialMediaID { get; set; }
         public string Title { get; set; }
