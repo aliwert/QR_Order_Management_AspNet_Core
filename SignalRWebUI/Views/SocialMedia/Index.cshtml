@@ -30,23 +30,21 @@
                             <tbody>
                                 @foreach (var x in Model)
                                 {
-                                <tr>
-                                <td>@x.SocialMediaID</td>
+                                    <tr>
+                                        <td>@x.SocialMediaID</td>
+                                        <td>@x.Title</td>
+                                        <td>@x.Url</td>
+                                        <td><a href="/SocialMedia/DeleteSocialMedia/@x.SocialMediaID" class="btn btn-outline-danger">Delete</a></td>
+                                        <td><a href="/SocialMedia/DeleteSocialMedia/@x.SocialMediaID" class="btn btn-outline-danger">Update</a></td>
 
-
-                                </tr>
+                                    </tr>
                                 }
                             </tbody>
                         </table>
                         <a href="/SocialMedia/CreateSocialMedia/" class="btn btn-outline-primary">Add New Social Media</a>
                     </div>
                 </div>
-
-
-
-
             </div>
-
         </div>
     </div>
 </div>
