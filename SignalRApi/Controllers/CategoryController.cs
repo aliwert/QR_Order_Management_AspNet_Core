@@ -25,6 +25,11 @@ namespace SignalRApi.Controllers
             var value = _mapper.Map<List<ResultCategoryDto>>(_categoryService.TGetListtAll());
             return Ok(value);
         }
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            return Ok(_categoryService.TCategoryCount());
+        }
         [HttpPost]
         public IActionResult CreatCategory(CreateCategoryDto createCategoryDto)
         {
@@ -35,7 +40,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("Category added");
         }
-        [HttpDelete("{id}") ]
+        [HttpDelete("{id}")]
         public IActionResult DeleteCategory(int id)
         {
             var value = _categoryService.TGetByID(id);
