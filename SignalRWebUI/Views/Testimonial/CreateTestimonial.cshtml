@@ -1,8 +1,48 @@
-﻿
+﻿@model CreateTestimonialDto
 @{
     ViewData["Title"] = "CreateTestimonial";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Testimonial Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add New Testimonial</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Name">Enter Customer Name</label>
+                                <input type="text" class="form-control" asp-for="Name" id="Name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="Title">Enter Customer Title</label>
+                                <input type="text" class="form-control" asp-for="Title" id="Title" placeholder="Customer Title">
+                            </div>
+                        </div>
+                            <div class="form-group">
+                            <label for="Comment">Enter Customer Comment</label>
+                            <input type="text" class="form-control" asp-for="Comment" id="Comment" placeholder="Customer Comment">
+                            </div>
+                            <div class="form-group">
+                            <label for="ImageUrl">Enter Customer Url</label>
+                            <input type="text" class="form-control" asp-for="ImageUrl" id="ImageUrl" placeholder="Url Path">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Add Testimonial</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>CreateTestimonial</h1>
+
+
+
 
