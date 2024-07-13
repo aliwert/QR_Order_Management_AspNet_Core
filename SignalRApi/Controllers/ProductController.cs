@@ -41,10 +41,14 @@ namespace SignalRApi.Controllers
                 Name = y.Category.Name,
                 ProductName = y.ProductName,
 
-
             });
             return Ok(values.ToList());
 
+        }
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            return Ok(_productService.TProductCount());
         }
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
