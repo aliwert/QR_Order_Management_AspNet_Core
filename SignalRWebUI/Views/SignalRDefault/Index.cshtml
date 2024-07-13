@@ -1,32 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
-<h1>Index</h1>
-@section Scripts
-{
-   
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <script type="text/javascript">
-                            $(document).ready(() => {
-                                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7063/SignalRHub").build();
-                                $("#connstatus").text(connection.state);
 
-                                connection.start().then(() => {
-                                    $("#connstatus").text(connection.state);
-                                }).catch((err) => { console.log(err) });
-                            })
-                        </script>
-                    </div>
+<h1>Index</h1>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <script type="text/javascript">
+                        $(document).ready(() => {
+                            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7063/SignalRHub").build();
+                            $("#connstatus").text(connection.state);
+
+                            connection.start().then(() => {
+                                $("#connstatus").text(connection.state);
+                            }).catch((err) => { console.log(err) });
+                        })
+                    </script>
                 </div>
             </div>
         </div>
     </div>
-}
+</div>
 <div class="row">
     <div class="col-md-8 offset-2">
         <div class="alert alert-success">
