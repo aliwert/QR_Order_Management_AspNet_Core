@@ -20,7 +20,7 @@ namespace SignalRApi.Controllers
             _testimonialService = testimonialService;
             _mapper = mapper;
         }
-        [HttpGet("{id}")]
+        [HttpGet]
         public IActionResult TestimonailList()
         {
             var value = _mapper.Map<List<ResultTestimonialDto>>(_testimonialService.TGetListtAll());
@@ -46,7 +46,7 @@ namespace SignalRApi.Controllers
             _testimonialService.TDelete(value);
             return Ok("Testimonial information deleted");
         }
-        [HttpGet("GetTestimonial")]
+        [HttpGet("{id}")]
         public IActionResult GetTestimonial(int id)
         {
             var value = _testimonialService.TGetByID(id);
