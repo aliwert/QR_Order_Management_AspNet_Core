@@ -17,10 +17,14 @@
                         $(document).ready(() => {
                             var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7063/SignalRHub").build();
                             $("#connstatus").text(connection.state);
-
                             connection.start().then(() => {
                                 $("#connstatus").text(connection.state);
+                                connection.invoke("SendCategoryCount");
                             }).catch((err) => { console.log(err) });
+                            
+                            connection.on("ReceiverCategoryCount", (value) => {
+                                $("#categorycount").text(value);
+                            })
                         })
                     </script>
                 </div>
@@ -32,6 +36,9 @@
     <div class="col-md-8 offset-2">
         <div class="alert alert-success">
             Connection Status: <strong id="connstatus"></strong>
+        </div>
+        <div class="alert alert-info">
+            Number of Categories : <strong id="categorycount"></strong>
         </div>
     </div>
 </div>
