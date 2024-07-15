@@ -42,6 +42,11 @@ namespace SignalR.BusinessLayer.Concret
             throw new NotImplementedException();
         }
 
+        public decimal TLastOrderPrice()
+        {
+            return _orderDal.LastOrderPrice();
+        }
+
         public int TTotalOrderCount()
         {
             return _orderDal.TotalOrderCount();
