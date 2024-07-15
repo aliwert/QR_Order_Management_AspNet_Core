@@ -75,6 +75,11 @@ namespace SignalRApi.Controllers
         {
             return Ok(_productService.TProductNameByMinPrice());
         }
+        [HttpGet("ProductAvgPriceByHamburger")]
+        public IActionResult ProductAvgPriceByHamburger()
+        {
+            return Ok(_productService.TProductAvgPriceByHamburger());
+        }
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {
@@ -113,7 +118,7 @@ namespace SignalRApi.Controllers
                 ProductName = updateProductDto.ProductName,
                 ProductStatus = updateProductDto.ProductStatus,
                 ProductID = updateProductDto.ProductID,
-                CategoryID= updateProductDto.CategoryID,
+                CategoryID = updateProductDto.CategoryID,
 
             });
             return Ok("Product information updated");

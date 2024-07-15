@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace SignalR.BusinessLayer.Abstract
 {
-    public interface IOrderDal:IGenericDal<Order>
+    public interface IOrderDal : IGenericDal<Order>
     {
+        int TotalOrderCount();
+        int ActiveOrderCount();
     }
 }
