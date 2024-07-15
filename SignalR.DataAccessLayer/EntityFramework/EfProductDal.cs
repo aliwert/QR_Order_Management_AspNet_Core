@@ -45,7 +45,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
         public string ProductNameByMaxPrice()
         {
             using var context = new SignalRContext();
-            return context.Products.Where(x=> x.Price==(context.Products.Max(y => y.Price))).Select(z=> z.ProductName).FirstOrDefault();
+            return context.Products.Where(x => x.Price == (context.Products.Max(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
         }
 
         public string ProductNameByMinPrice()
@@ -57,8 +57,14 @@ namespace SignalR.DataAccessLayer.EntityFramework
         public decimal ProductPriceAvg()
         {
             using var context = new SignalRContext();
-            return context.Products.Average(x=> x.Price);
+            return context.Products.Average(x => x.Price);
 
+        }
+
+        public decimal TProductAvgPriceByHamburger()
+        {
+            using var context = new SignalRContext();
+            return context.Products.Where(x => x.CategoryID == (context.Categories.Where(y => y.Name == "Hamburger").Select(z => z.CategoryID).FirstOrDefault())).Average(w => w.Price);
         }
     }
 }
