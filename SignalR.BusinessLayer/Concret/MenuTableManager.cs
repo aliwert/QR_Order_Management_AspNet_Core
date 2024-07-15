@@ -38,6 +38,11 @@ namespace SignalR.BusinessLayer.Concret
             throw new NotImplementedException();
         }
 
+        public int TMenuTableCount()
+        {
+            return _menuTableDal.MenuTableCount();
+        }
+
         public void TUpdate(MenuTable entity)
         {
             throw new NotImplementedException();
