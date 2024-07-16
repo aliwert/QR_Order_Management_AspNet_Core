@@ -16,3 +16,8 @@
   <br><b>Displaying Database Data On The Statistics Page</b>
   <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/fdd490771883c115bd624269cb3b71dc69564a2d/statistic.png"></a>
 </div>
+
+<div align="center">
+  <br><b>User Interface Main Page</b>
+  <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/d2b828449d4ef48009a45b3f1da7fea375ab87a0/uisection.gif"></a>
+</div>
