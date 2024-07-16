@@ -3,22 +3,22 @@
 }
 <!DOCTYPE html>
 <html>
-@await Component.InvokeAsync("_LayoutHeaderPartialComponent")
+@await Component.InvokeAsync("_UILayoutHeaderPartialComponent")
 <body>
     <div class="wrapper">
-        @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
+        @await Component.InvokeAsync("_UILayoutNavbarComponentPartial")
 
 
-        @await Component.InvokeAsync("_LayoutSidebarComponentPartial")
+        @await Component.InvokeAsync("_UILayoutSidebarComponentPartial")
 
 
         <div class="main-panel">
             @RenderBody()
 
-            @await Component.InvokeAsync("_LayoutFooterComponentPartial")
+            @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
         </div>
     </div>
-    @await Component.InvokeAsync("_LayoutScriptComponentPartial")
+    @await Component.InvokeAsync("_UILayoutScriptComponentPartial")
 </body>
 </html>
 

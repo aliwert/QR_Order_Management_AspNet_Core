@@ -1,17 +1,17 @@
-﻿
+﻿﻿
 @{
     Layout = null;
-    // UILAYOUT
-}
 
+}
+@* UI Layout*@
 <!DOCTYPE html>
 <html>
 
 @await Component.InvokeAsync("_UILayoutHeadComponentPartial")
 
-<body class="sub_page">
+<body>
+
     @await Component.InvokeAsync("_UILayoutNavbarComponentPartial")
- 
 
     <!-- book section -->
     @RenderBody()
@@ -23,7 +23,7 @@
 
     <!-- footer section -->
     <!-- jQery -->
-   
+
 
 </body>
 
