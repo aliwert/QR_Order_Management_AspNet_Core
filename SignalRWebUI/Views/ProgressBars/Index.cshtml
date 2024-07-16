@@ -2,8 +2,32 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
 <div class="content">
     <div class="container-fluid">
+        <script type="text/javascript">
+
+            $(document).ready(() => {
+
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7063/SignalRHub").build();
+                $("#connstatus").text(connection.state);
+                connection.start().then(() => {
+                    $("#connstatus").text(connection.state);
+                    setInterval(() => {
+                        connection.invoke("SendProgress");
+                    }, 1000);
+                }).catch((err) => { console.log(err) });
+
+
+                connection.on("ReceiveTotalMoneyCaseAmount", (value) => {
+                    $("#receivetotalmoneycaseamount").text(value);
+                });
+            });
+
+        </script>
         <h2 class="page-title">Admin Statistics & Status</h2>
         <div class="row">
             <div class="col-md-12">
@@ -11,14 +35,14 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <p class="fw-bold mt-1">My Balance</p>
-                                <h4><b>$ 3,018</b></h4>
-                                <a href="#" class="btn btn-primary btn-full text-left mt-3 mb-3"><i class="la la-plus"></i> Add Balance</a>
+                                <p class="fw-bold mt-1">Total Money Case</p>
+                                <h4 id="receivetotalmoneycaseamount"><b></b></h4>
+                                <a href="/Order/CreateOrder/" class="btn btn-primary btn-full text-left mt-3 mb-3"><i class="la la-plus"></i> New Order</a>
                             </div>
                             <div class="card-footer">
                                 <ul class="nav">
-                                    <li class="nav-item"><a class="btn btn-default btn-link" href="#"><i class="la la-history"></i> History</a></li>
-                                    <li class="nav-item ml-auto"><a class="btn btn-default btn-link" href="#"><i class="la la-refresh"></i> Refresh</a></li>
+                                    <li class="nav-item"><a class="btn btn-default btn-link" href="/Order/Index/"><i class="la la-history"></i> Orders</a></li>
+                                    <li class="nav-item ml-auto"><a class="btn btn-default btn-link" href="/ProgressBars/Index/"><i class="la la-refresh"></i> Refresh</a></li>
                                 </ul>
                             </div>
                         </div>
