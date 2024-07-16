@@ -2,9 +2,34 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+
 <div class="content">
     <div class="container-fluid">
-        <h4 class="page-title">Dashboard</h4>
+
+        <script type="text/javascript">
+
+            $(document).ready(() => {
+
+                var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7063/SignalRHub").build();
+                $("#connstatus").text(connection.state);
+                setInterval(() => {
+                    connection.invoke("SendCategoryCount");
+
+                }, 1000);
+                connection.start().then(() => {
+                    $("#connstatus").text(connection.state);
+                }).catch((err) => { console.log(err) });
+
+                connection.on("ReceiverCategoryCount", (value) => {
+                    $("#categorycount").text(value);
+                })
+            })
+        </script>
+        <h4 class="page-title">Statistic Page</h4>
         <div class="row">
             <div class="col-md-3">
                 <div class="card card-stats card-warning">
@@ -17,8 +42,8 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Visitors</p>
-                                    <h4 class="card-title">1,294</h4>
+                                    <p class="card-category">Number Of Categories</p>
+                                    <h4 class="card-title" id="categorycount"></h4>
                                 </div>
                             </div>
                         </div>
