@@ -25,6 +25,14 @@
                 connection.on("ReceiveTotalMoneyCaseAmount", (value) => {
                     $("#receivetotalmoneycaseamount").text(value);
                 });
+
+                connection.on("ReceiveActiveOrderCount", (value) => {
+                    $("#receiveactiveordercount").text(value);
+                });
+
+                connection.on("ReceiveMenuTableCount", (value) => {
+                    $("#receivemenutablecount").text(value);
+                });
             });
 
         </script>
@@ -101,8 +109,8 @@
                                     </div>
                                     <div class="col-7 d-flex align-items-center">
                                         <div class="numbers">
-                                            <p class="card-category">Number</p>
-                                            <h4 class="card-title">150GB</h4>
+                                            <p class="card-category">Active Orders</p>
+                                            <h4 id="receiveactiveordercount" class="card-title"></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -115,8 +123,8 @@
                                     </div>
                                     <div class="col-7 d-flex align-items-center">
                                         <div class="numbers">
-                                            <p class="card-category">Followers</p>
-                                            <h4 class="card-title">+45K</h4>
+                                            <p class="card-category">Total Table Count</p>
+                                            <h4 class="card-title" id="receivemenutablecount"></h4>
                                         </div>
                                     </div>
                                 </div>
