@@ -11,3 +11,8 @@
   <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/55de57545cf396e2ab98e245e98211bcbc76c44a/addnewbooking3.gif"></a>
   
 </div>
+
+<div align="center">
+  <br><b>Displaying Database Data On The Statistics Page</b>
+  <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/fdd490771883c115bd624269cb3b71dc69564a2d/statistic.png"></a>
+</div>
