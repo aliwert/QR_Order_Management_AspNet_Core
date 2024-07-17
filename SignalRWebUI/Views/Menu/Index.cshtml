@@ -136,11 +136,16 @@
                 data: {x:id},
                 contentType: 'json',
                 success: function () {
-                    alert("Product Id Your Click: " + id);
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "You clicked the button!",
+                        icon: "success"
+                    });
                 }
             }) 
         }
     </script>
+    <script src="sweetalert2.all.min.js"></script>
 </body>
 
 </html>
