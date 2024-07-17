@@ -1,4 +1,6 @@
-﻿<footer class="footer_section">
+﻿@model List<ResultContactDto>
+@foreach(var x in Model) {
+<footer class="footer_section">
     <div class="container">
         <div class="row">
             <div class="col-md-4 footer-col">
@@ -7,7 +9,7 @@
                         Contact Us
                     </h4>
                     <div class="contact_link_box">
-                        <a href="">
+                        <a href="@x.Location">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <span>
                                 Location
@@ -16,13 +18,13 @@
                         <a href="">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <span>
-                                Call +01 1234567890
+                                @x.Phone
                             </span>
                         </a>
                         <a href="">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span>
-                                demo@gmail.com
+                                @x.Mail
                             </span>
                         </a>
                     </div>
@@ -30,11 +32,11 @@
             </div>
             <div class="col-md-4 footer-col">
                 <div class="footer_detail">
-                    <a href="" class="footer-logo">
-                        Feane
+                    <a href="/Default/Index/" class="footer-logo">
+                        @x.FooterTitle
                     </a>
                     <p>
-                        Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                        @x.FooterDescription
                     </p>
                     <div class="footer_social">
                         <a href="">
@@ -57,23 +59,24 @@
             </div>
             <div class="col-md-4 footer-col">
                 <h4>
-                    Opening Hours
+                    @x.OpenDays
                 </h4>
                 <p>
-                    Everyday
+                    @x.OpenDaysDescription
                 </p>
                 <p>
-                    10.00 Am -10.00 Pm
+                    @x.OpenHours
                 </p>
             </div>
         </div>
         <div class="footer-info">
             <p>
                 &copy; <span id="displayYear"></span> All Rights Reserved By
-                <a href="https://html.design/">Free Html Templates</a><br><br>
+                <a href="https://html.design/">AliWert</a><br><br>
                 &copy; <span id="displayYear"></span> Distributed By
-                <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                <a href="https://themewagon.com/" target="_blank">AliWert</a>
             </p>
         </div>
     </div>
 </footer>
+}
