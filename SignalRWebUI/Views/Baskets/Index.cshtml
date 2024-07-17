@@ -1,0 +1,37 @@
+﻿@model List<ResultBasketDto>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+@await Component.InvokeAsync("_UILayoutHeadComponentPartial")
+
+
+<body class="sub_page">
+
+    @await Component.InvokeAsync("_MenuNavbarComponentPartial")
+    <br />
+    <br />
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-dark mb-30">
+                    <a class="breadcrumb-item text-white" href="/Default/Index/">Main Page</a>
+                    <a class="breadcrumb-item text-white" href="/Menu/Index/">Menu</a>
+                    <span class="breadcrumb-item active">Your Basket</span>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
+
+    @await Component.InvokeAsync("_UILayoutScriptComponentPartial")
+    <script src="sweetalert2.all.min.js"></script>
+</body>
+
+</html>
