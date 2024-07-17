@@ -45,6 +45,24 @@
 
                         </tr>
                     </thead>
+                    @foreach (var x in Model)
+                    {
+                        count++;
+                        <tbody class="align-middle">
+                            <tr>
+                                <td class="align-middle">@count</td>
+                                <td class="align-middle">@x.ProductID</td>
+                                <td class="align-middle">@x.Count</td>
+                                <td class="align-middle">@x.Price</td>
+                                <td class="align-middle">@x.TotalPrice</td>
+                                <td class="alignalign-middle btn-delete">
+                                    <button data-basketid="@x.BasketID" id="btndeletebasketid" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
                 </table>
             </div>
         </div>
