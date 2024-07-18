@@ -23,5 +23,5 @@
 </div>
 <div align="center">
   <br><b>Displaying Database Data On The Basket Page</b>
-  <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/a51f9776815b5153da93f0d6294f66648f3dda1d/basket.png"></a>
+  <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/1402c7cfb251fb46479dbb0904f131d58d617750/basket2.png"></a>
 </div>
