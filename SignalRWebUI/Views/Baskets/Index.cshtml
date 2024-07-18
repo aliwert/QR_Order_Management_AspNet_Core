@@ -3,6 +3,8 @@
     Layout = null;
     int count = 0;
     decimal basketTotalPrice = 0;
+    decimal basketKdv = 0;
+    decimal kdv = 0;
 }
 
 <!DOCTYPE html>
@@ -49,6 +51,9 @@
                     @foreach (var x in Model)
                     {
                         basketTotalPrice = Model.Sum(x => x.Price);
+                        kdv = basketTotalPrice * 10 / 100;
+                        basketKdv = basketTotalPrice + kdv;
+
                         count++;
                         <tbody class="align-middle">
                             <tr>
@@ -86,14 +91,14 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Vat Inclusive</h6>
-                            <h6 id="kdv" class="font-weight-medium">100₺</h6>
+                            <h6 id="kdv" class="font-weight-medium">@kdv </h6>
                         </div>
                         <br />
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total Amount</h5>
-                            <h5><span id="totalpricewithkdv">1600</span>₺</h5>
+                            <h5><span id="totalpricewithkdv">@basketKdv</span>₺</h5>
                         </div><br />
                         <button id="btnchecked" class="btn btn-block btn-warning font-weight-bold my-3">Complete Order</button>
                     </div>
