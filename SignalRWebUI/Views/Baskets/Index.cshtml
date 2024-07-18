@@ -51,7 +51,7 @@
                         <tbody class="align-middle">
                             <tr>
                                 <td class="align-middle">@count</td>
-                                <td class="align-middle">@x.ProductID</td>
+                                <td class="align-middle">@x.ProductName</td>
                                 <td class="align-middle">@x.Count</td>
                                 <td class="align-middle">@x.Price</td>
                                 <td class="align-middle">@x.TotalPrice</td>
@@ -64,6 +64,16 @@
                         </tbody>
                     }
                 </table>
+            </div>
+            <div class="col-lg-4">
+                <form>
+                    <div class="input-group">
+                        <input type="text" id="couponcode" class="form-control border-1 p-4" placeholder="Your Coupon Code" />
+                        <div>
+                            <a style="height:3rem;padding-top:0.4rem; margin-left: 0.9rem;" class="btn btn-warning" id="btncouponcode">	Application Coupon Code</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
