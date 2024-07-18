@@ -21,3 +21,7 @@
   <br><b>User Interface Main Page</b>
   <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/d2b828449d4ef48009a45b3f1da7fea375ab87a0/uisection.gif"></a>
 </div>
+<div align="center">
+  <br><b>Displaying Database Data On The Basket Page</b>
+  <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/a51f9776815b5153da93f0d6294f66648f3dda1d/basket.png"></a>
+</div>
