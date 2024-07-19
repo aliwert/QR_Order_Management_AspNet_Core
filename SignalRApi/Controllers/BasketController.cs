@@ -19,12 +19,14 @@ namespace SignalRApi.Controllers
         {
             _basketService = basketService;
         }
+
         [HttpGet]
         public IActionResult GetBasketByMenuTableID(int id)
         {
             var values = _basketService.TGetBasketByMenuTableNumber(id);
             return Ok(values);
         }
+
         [HttpGet("BasketListByMenuTableWithProductName")]
         public IActionResult BasketListByMenuTableWithProductName(int id)
         {
@@ -40,8 +42,8 @@ namespace SignalRApi.Controllers
                 TotalPrice = z.TotalPrice,
             }).ToList();
             return Ok(values);
-
         }
+
         [HttpPost]
         public IActionResult CreateBasket(CreateBasketDto createBasketDto)
         {
@@ -56,10 +58,16 @@ namespace SignalRApi.Controllers
             });
             return Ok();
         }
-        [HttpDelete("id")]
+
+        [HttpDelete("{id}")]
         public IActionResult DeleteBasket(int id)
         {
             var value = _basketService.TGetByID(id);
+            if (value == null)
+            {
+                return NotFound("Basket item not found");
+            }
+
             _basketService.TDelete(value);
             return Ok("Product in basket successfully deleted");
         }
