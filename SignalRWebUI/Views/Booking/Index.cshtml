@@ -22,18 +22,37 @@
                     $("#connstatus").text(connection.state);
                     setInterval(() => {
                         connection.invoke("GetBookingList");
-                    }, 10000);
+                    }, 3000);
                 }).catch((err) => { console.log(err) });
 
 
                 connection.on("ReceiveBookingList", (value) => {
                     console.log(value);
-                    $("#bookinglist").empty();
-                    value.forEach((item, index) => {
-                        $("#bookinglist").append(`<li class="list-group-item">${item.name}</li>`)
+                    let tablehtml = `<table class=table mt-3><thead>
+                                                 <tr>
+                                                 <th scope="col">#</th>
+                                                 <th scope="col">Name Surname</th>
+                                                 <th scope="col">Phone Number</th>
+                                                 <th scope="col">Body Count</th>
+                                                 <th scope="col">Reservation Status</th>
+                                                 <th scope="col">Delete</th>
+                                                 <th scope="col">Update</th>
+                                                 </tr>
+                                                 </thead>
+                                                 <tbody>`
+                    $.each(value, (index, item) => {
+                        tablehtml += `<tr>
+                                                <th>${item.bookingID}</th>
+                                                <td>${item.name}</td>
+                                                <td>${item.phone}</td>
+                                                <td>${item.personCount}</td>
+                                                <td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Delete</a></td>
+                                                <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Update</a></td>
+                                                </tr>`
                     });
+                    tablehtml += "</tbody></table>";
+                    $("#bookingList").html(tablehtml);
                 });
-
             });
 
         </script>
@@ -48,47 +67,12 @@
                         <div class="card-sub">
                             You can perform transactions related to the reservation from below
                         </div>
-                        <table class="table mt-3">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name Surname</th>
-                                    <th scope="col">Phone Number</th>
-                                    <th scope="col">Body Count</th>
-                                    <th scope="col">Reservation Status</th>
-                                    <th scope="col">Delete</th>
-                                    <th scope="col">Update</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var x in Model)
-                                {
-                                    count++;
-                                    <tr>
-                                        <td>@count</td>
-                                        <td>@x.Name</td>
-                                        <td>@x.Phone</td>
-                                        <td>@x.PersonCount</td>
-                                        <td>Reservation Received</td>
-                                        <td><a href="/Booking/DeleteBooking/@x.BookingID" class="btn btn-outline-danger">Delete</a></td>
-                                        <td><a href="/Booking/UpdateBooking/@x.BookingID" class="btn btn-outline-success">Update</a></td>
-
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
+                        <div id="bookingList"></div>
                         <a href="/Booking/CreateBooking/" class="btn btn-outline-primary">Add New Reservation</a>
-                        <div class="col-md-8">
-                            <ul class="list-group" id="bookinglist"></ul>
-                        </div>
+                      
                     </div>
                 </div>
-
-
-
-
             </div>
-
         </div>
     </div>
 </div>
