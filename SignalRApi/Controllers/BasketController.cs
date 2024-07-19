@@ -56,5 +56,12 @@ namespace SignalRApi.Controllers
             });
             return Ok();
         }
+        [HttpDelete("id")]
+        public IActionResult DeleteBasket(int id)
+        {
+            var value = _basketService.TGetByID(id);
+            _basketService.TDelete(value);
+            return Ok("Product in basket successfully deleted");
+        }
     }
 }

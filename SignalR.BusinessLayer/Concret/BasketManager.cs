@@ -30,12 +30,12 @@ namespace SignalR.BusinessLayer.Concret
 
         public void TDelete(Basket entity)
         {
-            throw new NotImplementedException();
+            _basketDal.Delete(entity);
         }
 
         public Basket TGetByID(int id)
         {
-            throw new NotImplementedException();
+           return _basketDal.GetByID(id);
         }
 
         public List<Basket> TGetListtAll()
