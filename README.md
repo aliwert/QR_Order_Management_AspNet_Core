@@ -36,3 +36,7 @@
   <br><b>The Active or Passive Status of Notifications Received from Admin</b>
   <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/1f9f7ea79b9c534cbe2426a0393a1f10b4f5cffb/notification.gif"></a>
 </div>
+<div align="center">
+  <br><b>Momentary Updating of Products in the Restaurant Displayed on the Statistics Page Every Second</b>
+  <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/25577402ebae619b21af5201fb02740dda22d75b/momentarystatistic.gif"></a>
+</div>
