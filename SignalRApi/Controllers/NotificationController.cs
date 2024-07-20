@@ -73,5 +73,17 @@ namespace SignalRApi.Controllers
             _notificationService.TUpdate(notification);
             return Ok("Notification updated.");
         }
+        [HttpGet("NotificationStatusChangeToFalse/{id}")]
+        public IActionResult NotificationStatusChangeToFalse(int id)
+        {
+            _notificationService.TNotificationStatusChangeToFalse(id);
+            return Ok("Update done");
+        }
+        [HttpGet("NotificationStatusChangeToTrue/{id}")]
+        public IActionResult NotificationStatusChangeToTrue(int id)
+        {
+            _notificationService.TNotificationStatusChangeToTrue(id);
+            return Ok("Update done");
+        }
     }
 }

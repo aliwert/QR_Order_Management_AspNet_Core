@@ -28,8 +28,8 @@
                                     <th scope="col">Description</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Delete</th>
-                                    <th scope="col">Update</th>
+                                    <th scope="col">Mark as Read</th>
+                                    <th scope="col">Mark as Unread</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,6 +43,8 @@
                                         <td>@item.Status</td>
                                         <td><a href="/Notifications/DeleteNotification/@item.NotificationId" class="btn btn-outline-danger">Delete</a></td>
                                         <td><a href="/Notifications/UpdateNotification/@item.NotificationId" class="btn btn-outline-success">Update</a></td>
+                                        <td><a href="/Notifications/NotificationStatusChangeToTrue/@item.NotificationId" class="btn btn-outline-warning">Read</a></td>
+                                        <td><a href="/Notifications/NotificationStatusChangeToFalse/@item.NotificationId" class="btn btn-outline-primary">Unread</a></td>
                                     </tr>
                                 }
                             </tbody>

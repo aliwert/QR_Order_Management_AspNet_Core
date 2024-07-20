@@ -16,7 +16,7 @@
                 $("#connstatus").text(connection.state);
                 setInterval(() => {
                     connection.invoke("SendNotification");
-                }, 5000);
+                }, 1000);
             }).catch((err) => { console.log(err) });
 
 
