@@ -45,7 +45,7 @@ namespace SignalRApi.Controllers
             _notificationService.TAdd(notification);
             return Ok("Insertion done successfully");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteNotification(int id)
         {
             var value = _notificationService.TGetByID(id);
