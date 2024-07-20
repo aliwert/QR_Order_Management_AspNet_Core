@@ -42,7 +42,6 @@ builder.Services.AddScoped<IContactDal, EfContactDal>();
 builder.Services.AddScoped<IDiscountService, DiscountManager>();
 builder.Services.AddScoped<IDiscountDal, EfDiscountDal>();
 
-
 // feature builder
 builder.Services.AddScoped<IFeatureService, FeatureManager>();
 builder.Services.AddScoped<IFeatureDal, EfFeatureDal>();
@@ -86,6 +85,10 @@ builder.Services.AddScoped<IBasketDal, EfBasketDal>();
 // notification builder
 builder.Services.AddScoped<INotificationService, NotificationManager>();
 builder.Services.AddScoped<INotificationDal, EfNotificationDal>();
+
+
+
+
 
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
