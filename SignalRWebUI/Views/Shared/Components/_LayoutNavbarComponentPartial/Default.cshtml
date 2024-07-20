@@ -16,7 +16,7 @@
                 $("#connstatus").text(connection.state);
                 setInterval(() => {
                     connection.invoke("SendNotification");
-                }, 10000);
+                }, 5000);
             }).catch((err) => { console.log(err) });
 
 
@@ -25,28 +25,19 @@
             });
             connection.on("ReceiveNotificationListByFalse", (value) => {
                 // console.log(value);
+                $("#notilist").empty();
                 for (var i = 0; i < value.length; i++) {
                     $("#notilist").append(`<a href="#"
-                            <div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
-                            <div class="notif-content">
-                            <span class="block">
-                            ${value[i].description}
-                            </span>
-                            <span class="time"> ${value[i].date}</span>
-                            </div>
-                            </a>
-                            `)
+                                    <div class="${value[i].type}"><i class="${value[i].icon}"></i></div>
+                                    <div class="notif-content">
+                                    <span class="block">
+                                    ${value[i].description}
+                                    </span>
+                                    <span class="time"> ${value[i].date}</span>
+                                    </div>
+                                    </a>
+                                    `)
                 }
-                // <a href="#" >
-                //     <div class="notif-icon notif-primary" > <i class="la la-user-plus" > </i> </div >
-                //         <div class="notif-content" >
-                //             <span class="block" >
-                //                 New user registered
-                //                     < /span>
-                //                     < span class="time" > 5 minutes ago < /span>
-                //                         < /div>
-                //                         < /a>
-
             });
 
         });
@@ -99,7 +90,8 @@
                         </li>
                         <li>
                             <div class="notif-center">
-                                ++++
+                                <div id="notilist">
+                                </div>
                             </div>
                         </li>
                         <li>
