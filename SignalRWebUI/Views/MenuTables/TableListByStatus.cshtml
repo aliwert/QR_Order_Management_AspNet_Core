@@ -3,6 +3,7 @@
     ViewData["Title"] = "TableListByStatus";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     string color = "";
+    string status = "";
 }
 
 <div class="content">
@@ -14,10 +15,12 @@
                 if (x.Status == false)
                 {
                     color = "card card-stats card-danger";
+                    status = "Table empty";
                 }
                 else
                 {
                     color = "card card-stats card-success";
+                    status = "Table full";
                 }
                 <div class="col-md-3">
                     <div class="@color">
@@ -31,7 +34,7 @@
                                 <div class="col-7 d-flex align-items-center">
                                     <div class="numbers">
                                         <p class="card-category">@x.Name</p>
-                                        <h4 class="card-title">@x.Status</h4>
+                                        <h4 class="card-title">@status</h4>
                                     </div>
                                 </div>
                             </div>
