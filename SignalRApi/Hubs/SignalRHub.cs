@@ -24,7 +24,7 @@ namespace SignalRApi.Hubs
             _notificationService = notificationService;
         }
 
-        int clientCount = 0;
+        public static int clientCount { get; set; }
         public async Task SendStatistic()
         {
             var value = _categoryService.TCategoryCount();
