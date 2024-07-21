@@ -34,6 +34,7 @@ namespace SignalRWebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateMenuTable(CreateMenuTableDto createMenuTableDto)
         {
+            createMenuTableDto.Status = false;
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createMenuTableDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json"); // 3 parameter => 1 = coming data, 2 = endocing.utf8 , 3 =  
