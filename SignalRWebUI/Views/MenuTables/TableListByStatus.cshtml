@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "TableListByStatus";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    string color = "";
 }
 
 <div class="content">
@@ -10,8 +11,16 @@
         <div class="row">
             @foreach (var x in Model)
             {
+                if (x.Status == false)
+                {
+                    color = "card card-stats card-danger";
+                }
+                else
+                {
+                    color = "card card-stats card-success";
+                }
                 <div class="col-md-3">
-                    <div class="card card-stats card-primary">
+                    <div class="@color">
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-5">
