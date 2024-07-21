@@ -1,22 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalR.DataAccessLayer.Concrete
 {
-    public class SignalRContext : DbContext
+    public class SignalRContext : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-LRMEISB\\SQLEXPRESS;initial Catalog=SignalRDb;integrated Security=true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-
         {
+            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Testimonial>()
+            modelBuilder.Entity<IdentityUserLogin<int>>().HasKey(x => new { x.LoginProvider, x.ProviderKey });
 
-                .HasKey(t => t.TestimonalID);
-
+            modelBuilder.Entity<Testimonial>().HasKey(t => t.TestimonalID);
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
