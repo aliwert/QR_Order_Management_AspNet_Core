@@ -37,6 +37,9 @@
                                                  <th scope="col">Reservation Status</th>
                                                  <th scope="col">Delete</th>
                                                  <th scope="col">Update</th>
+                                                 <th scope="col">Confirm</th>
+                                                 <th scope="col">Cancel</th>
+
                                                  </tr>
                                                  </thead>
                                                  <tbody>`
@@ -46,8 +49,11 @@
                                                 <td>${item.name}</td>
                                                 <td>${item.phone}</td>
                                                 <td>${item.personCount}</td>
+                                                <td>${item.description}</td>
                                                 <td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Delete</a></td>
                                                 <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Update</a></td>
+                                <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-info">Confirm</a></td>
+                               <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-dark">Cancel</a></td>
                                                 </tr>`
                     });
                     tablehtml += "</tbody></table>";
