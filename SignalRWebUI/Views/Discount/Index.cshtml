@@ -1,63 +1,63 @@
 ﻿@model List<ResultDiscountDto>
 @{
-	ViewData["Title"] = "Index";
-	Layout = "~/Views/AdminLayout/Index.cshtml";
-	int count = 0;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="content">
-	<div class="container-fluid">
-		<h4 class="page-title">Discount Of The Day Transactions</h4>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-header">
-						<div class="card-title">Discount List</div>
-					</div>
-					<div class="card-body">
-						<div class="card-sub">
-							The discounts of the day are available below. Don't forget to add a maximum of 2 items.
-						</div>
-						<table class="table mt-3">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Product</th>
-									<th scope="col">Rate Of Discount</th>
-									<th scope="col">Status</th>
-									<th scope="col">Delete</th>
-									<th scope="col">Update</th>
-									<th scope="col">Active</th>
-									<th scope="col">Passive</th>
+    <div class="container-fluid">
+        <h4 class="page-title">Discount Of The Day Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Discount List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            The discounts of the day are available below. Don't forget to add a maximum of <b>2 items.</b>
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Rate Of Discount</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Active</th>
+                                    <th scope="col">Passive</th>
 
-								</tr>
-							</thead>
-							<tbody>
-								@foreach (var x in Model)
-								{
-									count++;
-									<tr>
-										<td>@count</td>
-										<td>@x.Title</td>
-										<td>@x.Amount</td>
-										<td>@x.Status</td>
-										<td><a href="/Discount/DeleteDiscount/@x.DiscountID" class="btn btn-outline-danger">Delete</a></td>
-										<td><a href="/Discount/UpdateDiscount/@x.DiscountID" class="btn btn-outline-primary">Update</a></td>
-										<td><a href="/Discount/ChangeStatusToTrue/@x.DiscountID" class="btn btn-outline-success">Active</a></td>
-										<td><a href="/Discount/ChangeStatusToFalse/@x.DiscountID" class="btn btn-outline-warning">Passive</a></td>
-									</tr>
-								}
-							</tbody>
-						</table>
-						<a href="/Discount/CreateDiscount/" class="btn btn-outline-primary">Add New Discount</a>
-					</div>
-				</div>
-
-
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@x.Title</td>
+                                        <td>@x.Amount</td>
+                                        <td>@x.Status</td>
+                                        <td><a href="/Discount/DeleteDiscount/@x.DiscountID" class="btn btn-outline-danger">Delete</a></td>
+                                        <td><a href="/Discount/UpdateDiscount/@x.DiscountID" class="btn btn-outline-primary">Update</a></td>
+                                        <td><a href="/Discount/ChangeStatusToTrue/@x.DiscountID" class="btn btn-outline-success">Active</a></td>
+                                        <td><a href="/Discount/ChangeStatusToFalse/@x.DiscountID" class="btn btn-outline-warning">Passive</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Discount/CreateDiscount/" class="btn btn-outline-primary">Add New Discount</a>
+                    </div>
+                </div>
 
 
-			</div>
 
-		</div>
-	</div>
+
+            </div>
+
+        </div>
+    </div>
 </div>
