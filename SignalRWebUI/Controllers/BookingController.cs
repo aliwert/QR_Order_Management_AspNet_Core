@@ -82,14 +82,14 @@ namespace SignalRWebUI.Controllers
         public async Task<IActionResult> BookingStatusApproved(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            await client.GetAsync("https://localhost:7063/api/Booking/BookingStatusApproved/{id}");
+            await client.GetAsync($"https://localhost:7063/api/Booking/BookingStatusApproved/{id}");
 
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> BookingStatusCancelled(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            await client.GetAsync("https://localhost:7063/api/Booking/BookingStatusCancelled/{id}");
+            await client.GetAsync($"https://localhost:7063/api/Booking/BookingStatusCancelled/{id}");
 
             return RedirectToAction("Index");
         }
