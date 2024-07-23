@@ -24,6 +24,7 @@
 									<th scope="col">#</th>
 									<th scope="col">Product</th>
 									<th scope="col">Rate Of Discount</th>
+									<th scope="col">Status</th>
 									<th scope="col">Delete</th>
 									<th scope="col">Update</th>
 									<th scope="col">Active</th>
@@ -39,7 +40,7 @@
 										<td>@count</td>
 										<td>@x.Title</td>
 										<td>@x.Amount</td>
-								
+										<td>@x.Status</td>
 										<td><a href="/Discount/DeleteDiscount/@x.DiscountID" class="btn btn-outline-danger">Delete</a></td>
 										<td><a href="/Discount/UpdateDiscount/@x.DiscountID" class="btn btn-outline-primary">Update</a></td>
 										<td><a href="/Discount/ChangeStatusToTrue/@x.DiscountID" class="btn btn-outline-success">Active</a></td>
