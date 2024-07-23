@@ -32,6 +32,7 @@ namespace SignalRApi.Controllers
                 Name = createBookingDto.Name,
                 PersonCount = createBookingDto.PersonCount,
                 Phone = createBookingDto.Phone,
+                Description = createBookingDto.Description,
             };
             _bookingService.TAdd(booking);
             return Ok("Reservation created");
