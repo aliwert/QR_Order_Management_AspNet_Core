@@ -45,16 +45,16 @@
                                                  <tbody>`
                     $.each(value, (index, item) => {
                         tablehtml += `<tr>
-                                                <th>${index+1}</th>
-                                                <td>${item.name}</td>
-                                                <td>${item.phone}</td>
-                                                <td>${item.personCount}</td>
-                                                <td>${item.description}</td>
-                                                <td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Delete</a></td>
-                                                <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Update</a></td>
-                                <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-info">Confirm</a></td>
-                               <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-dark">Cancel</a></td>
-                                                </tr>`
+                                      <th>${index+1}</th>
+                                      <td>${item.name}</td>
+                                      <td>${item.phone}</td>
+                                      <td>${item.personCount}</td>
+                                      <td>${item.description}</td>
+                                      <td><a href="/Booking/DeleteBooking/${item.bookingID}" class="btn btn-outline-danger">Delete</a></td>
+                                      <td><a href="/Booking/UpdateBooking/${item.bookingID}" class="btn btn-outline-success">Update</a></td>
+                                      <td><a href="/Booking/BookingStatusApproved/${item.bookingID}" class="btn btn-outline-info">Confirm</a></td>
+                                      <td><a href="/Booking/BookingStatusCancelled/${item.bookingID}" class="btn btn-outline-dark">Cancel</a></td>
+                                      </tr>`
                     });
                     tablehtml += "</tbody></table>";
                     $("#bookingList").html(tablehtml);

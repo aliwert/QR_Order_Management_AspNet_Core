@@ -28,7 +28,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var values = context.Bookings.Find(id);
-            values.Description = "Reservation cancelled";
+            values.Description = "Reservation Received";
             context.SaveChanges();
         }
     }
