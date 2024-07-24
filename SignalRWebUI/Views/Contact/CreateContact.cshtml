@@ -34,18 +34,43 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="FooterDescription">Enter Description</label>
-                                <textarea rows="5" class="form-control" asp-for="FooterDescription" id="FooterDescription"></textarea>
+                                <label for="title">Enter Subtitle</label>
+                                <input type="text" class="form-control" asp-for="FooterTitle" id="title" placeholder="Enter Phone Number">
                             </div>
                         </div>
-                        <div class="card-action">
-                            <button class="btn btn-primary">Add Contact Information</button>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="OpenDays">Open Days</label>
+                                <input type="text" class="form-control" asp-for="OpenDays" id="OpenDays" placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="ohdescription">Open Days Description</label>
+                                <input type="text" class="form-control" asp-for="OpenDaysDescription" id="ohdescription" placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="OpenHours">Open Hours</label>
+                                <input type="text" class="form-control" asp-for="OpenHours" id="OpenHours" placeholder="Enter Phone Number">
+                            </div>
+                        </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="FooterDescription">Enter Description</label>
+                            <textarea rows="5" class="form-control" asp-for="FooterDescription" id="FooterDescription"></textarea>
                         </div>
                     </div>
-                </form>
+
+                    <div class="card-action">
+                        <button class="btn btn-primary">Add Contact Information</button>
+                    </div>
             </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 
 

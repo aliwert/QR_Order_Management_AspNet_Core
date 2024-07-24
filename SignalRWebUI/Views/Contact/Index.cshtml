@@ -14,12 +14,11 @@
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
-                            You can perform operations related to the contact from below, you don't forget create an contact page
+                            You can perform operations related to the contact from below, <b>you don't forget create a contact page</b>.
                         </div>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Location</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Mail Adress</th>
@@ -32,7 +31,6 @@
                                 @foreach (var x in Model)
                                 {
                                     <tr>
-                                        <td>@x.ContactID</td>
                                         <td>@x.Location</td>
                                         <td>@x.Phone</td>
                                         <td>@x.Mail</td>
