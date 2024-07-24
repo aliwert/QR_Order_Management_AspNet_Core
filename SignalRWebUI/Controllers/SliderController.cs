@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SignalRWebUI.Dtos.FeatureDtos;
 using SignalRWebUI.Dtos.SliderDtos;
 using System.Text;
 

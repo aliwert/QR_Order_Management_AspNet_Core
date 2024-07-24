@@ -23,7 +23,7 @@ namespace SignalRApi.Controllers
         [HttpGet]
         public IActionResult SliderList()
         {
-            var value = _mapper.Map<List<ResultFeatureDto>>(_sliderService.TGetListtAll());
+            var value = _mapper.Map<List<ResultSliderDto>>(_sliderService.TGetListtAll());
             return Ok(value);
         }
         [HttpPost]
