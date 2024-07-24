@@ -9,49 +9,54 @@ using System.Threading.Tasks;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-	public class DiscountManager : IDiscountService
-	{
-		private readonly IDiscountDal _discountDal;
+    public class DiscountManager : IDiscountService
+    {
+        private readonly IDiscountDal _discountDal;
 
-		public DiscountManager(IDiscountDal discountDal)
-		{
-			_discountDal = discountDal;
-		}
+        public DiscountManager(IDiscountDal discountDal)
+        {
+            _discountDal = discountDal;
+        }
 
-		public void TAdd(Discount entity)
-		{
-			_discountDal.Add(entity);
-		}
+        public void TAdd(Discount entity)
+        {
+            _discountDal.Add(entity);
+        }
 
-		public void TChangeStatusToFalse(int id)
-		{
-			_discountDal.ChangeStatusToFalse(id);
+        public void TChangeStatusToFalse(int id)
+        {
+            _discountDal.ChangeStatusToFalse(id);
 
-		}
+        }
 
-		public void TChangeStatusToTrue(int id)
-		{
-			_discountDal.ChangeStatusToTrue(id);
-		}
+        public void TChangeStatusToTrue(int id)
+        {
+            _discountDal.ChangeStatusToTrue(id);
+        }
 
-		public void TDelete(Discount entity)
-		{
-			_discountDal.Delete(entity);
-		}
+        public void TDelete(Discount entity)
+        {
+            _discountDal.Delete(entity);
+        }
 
-		public Discount TGetByID(int id)
-		{
-			return _discountDal.GetByID(id);
-		}
+        public Discount TGetByID(int id)
+        {
+            return _discountDal.GetByID(id);
+        }
 
-		public List<Discount> TGetListtAll()
-		{
-			return _discountDal.GetListtAll();
-		}
+        public List<Discount> TGetListByStatusTrue()
+        {
+            return _discountDal.GetListByStatusTrue();
+        }
 
-		public void TUpdate(Discount entity)
-		{
-			_discountDal.Update(entity);
-		}
-	}
+        public List<Discount> TGetListtAll()
+        {
+            return _discountDal.GetListtAll();
+        }
+
+        public void TUpdate(Discount entity)
+        {
+            _discountDal.Update(entity);
+        }
+    }
 }
