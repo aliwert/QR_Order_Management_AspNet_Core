@@ -8,5 +8,16 @@ namespace SignalRWebUI.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public IActionResult SendMessage()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
