@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 <div class="content">
     <div class="container-fluid">
@@ -29,8 +30,9 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    count++;
                                     <tr>
-                                        <td>@item.TestimonalID</td>
+                                        <td>@count</td>
                                         <td>@item.Name</td>
                                         <td>@item.Status</td>
                                         <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonalID" class="btn btn-outline-danger">Delete</a></td>
