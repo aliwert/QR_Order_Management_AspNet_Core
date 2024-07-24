@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SignalRWebUI.Dtos.SliderDtos
 {
-    public class ResultSliderDto
+    public class UpdateSliderDto
     {
         public int SliderID { get; set; }
         public string Title1 { get; set; }

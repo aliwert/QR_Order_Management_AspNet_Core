@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SignalRWebUI.Dtos.FeatureDtos;
+using SignalRWebUI.Dtos.SliderDtos;
 using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
-    public class FeatureController : Controller
+    public class SliderController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        public FeatureController(IHttpClientFactory httpClientFactory)
+        public SliderController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -16,11 +17,11 @@ namespace SignalRWebUI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7063/api/Feature");
+            var responseMessage = await client.GetAsync("https://localhost:7063/api/Slider");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync(); // string method 
-                var values = JsonConvert.DeserializeObject<List<ResultFeatureDto>>(jsonData); //list = deserialize,  add & update = serialize
+                var values = JsonConvert.DeserializeObject<List<ResultSliderDto>>(jsonData); //list = deserialize,  add & update = serialize
                 return View(values);
             }
             return View();
