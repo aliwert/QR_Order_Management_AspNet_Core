@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="content">
@@ -30,12 +31,13 @@
                             <tbody>
                                 @foreach (var x in Model)
                                 {
+                                    count++;
                                     <tr>
-                                        <td>@x.SocialMediaID</td>
+                                        <th>@count</th>
                                         <td>@x.Title</td>
                                         <td>@x.Url</td>
                                         <td><a href="/SocialMedia/DeleteSocialMedia/@x.SocialMediaID" class="btn btn-outline-danger">Delete</a></td>
-                                        <td><a href="/SocialMedia/UpdateSocialMedia/@x.SocialMediaID" class="btn btn-outline-danger">Update</a></td>
+                                        <td><a href="/SocialMedia/UpdateSocialMedia/@x.SocialMediaID" class="btn btn-outline-primary">Update</a></td>
 
                                     </tr>
                                 }
