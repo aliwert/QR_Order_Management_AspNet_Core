@@ -6,6 +6,12 @@ namespace SignalRWebUI.Controllers
 {
     public class QrCodeController : Controller
     {
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult Index(string value)
         {
             using (MemoryStream ms = new MemoryStream())
