@@ -23,15 +23,19 @@ namespace SignalRWebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(LoginDto loginDto)
         {
-            var result = await _signInManager.PasswordSignInAsync(loginDto.Username,loginDto.Password,false,false);
+            var result = await _signInManager.PasswordSignInAsync(loginDto.Username, loginDto.Password, false, false);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Category");
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+
+        }
+
     }
 }
