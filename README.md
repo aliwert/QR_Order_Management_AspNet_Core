@@ -4,6 +4,19 @@
 - <b>Technical Details:</b> The system leverages an API architecture to manage background processes, including sending confirmation emails for reservations. SignalR is utilized for real-time updates and features such as shopping cart management.
 <hr>
 
+## Features
+- <b>Real-Time Data Updates:</b> SignalR is utilized for real-time data streaming, ensuring instant updates across the platform.
+-  <b>Clean Code Implementation:</b> The project follows Clean Code principles, leveraging the "View Components" structure for maintainability and modularity.
+-  <b>Scalable Architecture:</b> Built using the "N-Tier Architecture," the application separates concerns across different layers, promoting scalability and ease of maintenance.
+-  <b>Efficient Data Handling:</b> The "Repository Design Pattern" is employed to manage data access, providing a clean separation between the data and business logic.
+-  <b>Entity Framework:</b> The application uses Entity Framework with CodeFirst approach for database management, allowing for seamless database creation and migrations.
+-  <b>Secure User Authentication:</b> ASP.NET Core Identity is integrated for robust security, including features like email confirmation for reservations to ensure authorized access.
+-  <b>Responsive Design:</b> The front-end is built with HTML, CSS, and Bootstrap, ensuring a responsive and user-friendly interface across various devices.
+-  <b>Interactive User Experience:</b> JavaScript and Ajax are used to enhance the user experience with dynamic content loading and seamless interactions.
+-  <b>Modern Web Development:</b> The project is developed using ASP.NET Core 8.0, leveraging the latest features and performance improvements.
+-  <b>RESTful API Integration:</b> An ASP.NET Core API is implemented to handle all backend operations, providing a structured and efficient communication layer for the application.
+
+
 <div align="center">
   <br><b>API Documentation and Testing with Swagger</b>
   <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/de3841d76eab8aff7189a629441a4d8f76ce24c8/image.png"></a>
