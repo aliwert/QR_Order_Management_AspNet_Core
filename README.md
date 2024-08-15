@@ -15,7 +15,7 @@
 -  <b>Interactive User Experience:</b> JavaScript and Ajax are used to enhance the user experience with dynamic content loading and seamless interactions.
 -  <b>Modern Web Development:</b> The project is developed using ASP.NET Core 8.0, leveraging the latest features and performance improvements.
 -  <b>RESTful API Integration:</b> An ASP.NET Core API is implemented to handle all backend operations, providing a structured and efficient communication layer for the application.
-
+<hr>
 
 <div align="center">
   <br><b>API Documentation and Testing with Swagger</b>
