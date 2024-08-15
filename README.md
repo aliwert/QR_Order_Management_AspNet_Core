@@ -1,3 +1,9 @@
+## Project Overview
+- <b>Objective:</b> This project aims to modernize operations by facilitating restaurant discovery and improving user interaction.
+- <b>User Interaction:</b> Customers can place orders and make reservations directly by scanning QR codes at their tables. These reservations are immediately visible in the admin panel, with real-time notifications sent to managers. Secure email verification is implemented for control panel access.
+- <b>Technical Details:</b> The system leverages an API architecture to manage background processes, including sending confirmation emails for reservations. SignalR is utilized for real-time updates and features such as shopping cart management.
+<hr>
+
 <div align="center">
   <br><b>API Documentation and Testing with Swagger</b>
   <br><br><img width="639" alt="AliWert" src="https://github.com/aliwert/signalr-ss/blob/de3841d76eab8aff7189a629441a4d8f76ce24c8/image.png"></a>
